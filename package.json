@@ -1,0 +1,20 @@
+{
+  "name": "trigger_unify_method_exists",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Proxtx/trigger_unify_method_exists.git"
+  },
+  "author": "Proxtx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Proxtx/trigger_unify_method_exists/issues"
+  },
+  "homepage": "https://github.com/Proxtx/trigger_unify_method_exists#readme"
+}
