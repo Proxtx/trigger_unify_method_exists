@@ -38,6 +38,11 @@ export class Trigger {
     let definitions = (
       await this.api.getDefinitions(config.unifyGuiAPI.pwd, data.app)
     ).methods;
+    
+    if(!definitions){
+      return false;
+    }
+    
     for (let method in definitions) {
       definitions[method] = true;
     }
