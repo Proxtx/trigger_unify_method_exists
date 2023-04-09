@@ -32,3 +32,12 @@ getTriggerConfiguration(() => {
     },
   };
 });
+
+if (triggerPresetData) {
+  appSelect.value = triggerPresetData.app;
+  applyOptionArray(
+    methodSelect,
+    Object.keys(triggerGuiData.apps[appSelect.value])
+  );
+  methodSelect.value = triggerPresetData.method;
+}
