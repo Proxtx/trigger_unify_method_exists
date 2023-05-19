@@ -10,7 +10,7 @@ export class Trigger {
 
     (async () => {
       this.api = await genCombine(
-        config.unifyGuiAPI.url + "/",
+        config.apps + "/",
         "public/api.js",
         genModule
       );
@@ -21,11 +21,9 @@ export class Trigger {
   }
 
   getSelectionGui = async () => {
-    let apps = await this.api.getApps(config.unifyGuiAPI.pwd);
+    let apps = await this.api.getApps(config.pwd);
     for (let app in apps) {
-      apps[app] = (
-        await this.api.getDefinitions(config.unifyGuiAPI.pwd, app)
-      ).methods;
+      apps[app] = (await this.api.getDefinitions(config.pwd, app)).methods;
     }
     return {
       html: this.html,
@@ -35,14 +33,13 @@ export class Trigger {
   };
 
   triggers = async (data) => {
-    let definitions = (
-      await this.api.getDefinitions(config.unifyGuiAPI.pwd, data.app)
-    ).methods;
-    
-    if(!definitions){
+    let definitions = (await this.api.getDefinitions(config.pwd, data.app))
+      .methods;
+
+    if (!definitions) {
       return false;
     }
-    
+
     for (let method in definitions) {
       definitions[method] = true;
     }
